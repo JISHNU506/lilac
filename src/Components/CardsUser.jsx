@@ -96,7 +96,7 @@ function CardsUser() {
               text={user.education}
             />
             <div className="flex flex-row items-center border-b-2 border-gray-200 p-4 justify-between">
-              <span className=" text-sm w- px-2 rounded-lg ml-2 text-[#60aac5] py-1 bg-[#e5f4fb]">
+              <span className=" text-sm font-medium w- px-2 rounded-lg ml-2 text-[#60aac5] py-1 bg-[#e5f4fb]">
                 {user.isApplied ? "Add Your rest Documents " : "Applied"}
               </span>
               <span className="text-base font-light text-gray-700 ">
