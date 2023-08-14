@@ -4,17 +4,16 @@ import {
   FaTrophy,
   FaArrowRight,
   FaArrowLeft,
-  FaPlus,
 } from "react-icons/fa";
 import { AiFillFileText } from "react-icons/ai";
 import { BsFillFileEarmarkRichtextFill } from "react-icons/bs";
 import { GiBanknote } from "react-icons/gi";
-import { MdDelete } from "react-icons/md";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormField from "./FormField";
 import RenderFormFields from "./RenderFormFields";
 import { useFormikContext } from "formik";
+import CardsUser from "./CardsUser";
+
 
 const iconsData = [
   {
@@ -79,6 +78,35 @@ const initialValues = [
   },
 ];
 
+const userData = [
+  {
+    id: "EDU-IND-123456",
+    name: "John Doe",
+    mobileNumber: "+91 1234567890",
+    email: "johndoe@example.com",
+    college: "BSc Computer Science",
+    isApplied: true,
+    img:"https://static.vecteezy.com/system/resources/thumbnails/003/492/047/small/closeup-portrait-of-a-charming-girl-over-blue-studio-background-image-free-photo.jpg"
+  },
+  {
+    id: "EDU-IND-987654",
+    name: "Jane Smith",
+    mobileNumber: "+91 9876543210",
+    email: "janesmith@example.com",
+    college: "MBA Marketing",
+    isApplied: false,
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQL0SHFK8OiSDCVL-Tg5DMAVAJeqRSbx18vJvu9WOhLWvvD6oBsyWE7inPQ5GCR09NZCY&usqp=CAU"
+  },
+  {
+    id: "EDU-IND-987654",
+    name: "sebastan vetal",
+    mobileNumber: "+91 9876543210",
+    email: "vetal@example.com",
+    college: "MBA Marketing",
+    isApplied: false,
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQL0SHFK8OiSDCVL-Tg5DMAVAJeqRSbx18vJvu9WOhLWvvD6oBsyWE7inPQ5GCR09NZCY&usqp=CAU"
+  },
+];
 
 const FormUser = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -109,6 +137,9 @@ const FormUser = () => {
   
 
   return (
+    <>
+
+    <CardsUser userData={userData}/>
     <div className="flex flex-col  max-w-5xl m-auto pt-10 px-4">
       <div className="flex flex-col pb-3 md:flex-row items-center justify-between border-b-2 border-gray-200 px-4">
         <div className="flex flex-row items-center w-full justify-between sm:justify-start">
@@ -195,6 +226,7 @@ const FormUser = () => {
         </Formik>
       </div>
     </div>
+    </>
   );
 };
 

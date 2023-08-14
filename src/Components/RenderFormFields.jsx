@@ -49,7 +49,6 @@ function RenderFormFields({
     buttonLabel,
     errors,
     touched,
-    
   }) => (
     <div>
       <label
@@ -91,54 +90,37 @@ function RenderFormFields({
             Basic Information
           </h3>
           <div className="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-              <FormField
-                id="name"
-                name="name"
-                label="Name"
-                placeholder="Your Name"
-                errors={errors}
-                touched={touched}
-                setFieldValue={setFieldValue}
-              />
-            </div>
-            <div>
-              <FormField
-                id="email"
-                name="email"
-                label="Email address"
-                placeholder="john.doe@company.com"
-                type="email"
-                errors={errors}
-                touched={touched}
-                setFieldValue={setFieldValue}
-              />
-            </div>
+            {[
+              { id: "name", label: "Name", placeholder: "Your Name" },
+              {
+                id: "email",
+                label: "Email address",
+                placeholder: "john.doe@company.com",
+                type: "email",
+              },
+              {
+                id: "mobileNumber",
+                label: "Mobile Number",
+                placeholder: "Mobile Number",
+              },
+              { id: "college", label: "College", placeholder: "College" },
+            ].map((field) => (
+              <div key={field.id}>
+                <FormField
+                  id={field.id}
+                  name={field.id}
+                  label={field.label}
+                  placeholder={field.placeholder}
+                  type={field.type}
+                  errors={errors}
+                  touched={touched}
+                  setFieldValue={setFieldValue}
+                  isReq={true}
+                />
+              </div>
+            ))}
           </div>
-          <div className="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-              <FormField
-                id="mobileNumber"
-                name="mobileNumber"
-                label="Mobile Number"
-                placeholder="Mobile Number"
-                errors={errors}
-                touched={touched}
-                setFieldValue={setFieldValue}
-              />
-            </div>
-            <div>
-              <FormField
-                id="college"
-                name="college"
-                label="College"
-                placeholder="College"
-                errors={errors}
-                touched={touched}
-                setFieldValue={setFieldValue}
-              />
-            </div>
-          </div>
+
           <FormField
             id="profilePhoto"
             name="profilePhoto"
@@ -148,6 +130,7 @@ function RenderFormFields({
             touched={touched}
             setFieldValue={setFieldValue}
             additionalClassName="mb-6"
+            
           />
         </div>
       );
@@ -369,7 +352,36 @@ function RenderFormFields({
           <h3 className="text-2xl font-semibold pb-3 text-gray-600">
             Eligibility and Syllabus
           </h3>
-          <h1>test</h1>
+          <div className="grid gap-6 mb-6 md:grid-cols-2">
+            {[
+              { id: "name1", label: "cource", placeholder: " cource 1" },
+              {
+                id: "name2",
+                label: "cource 1",
+                placeholder: " cource 1",
+              },
+              {
+                id: "name3",
+                label: "Admission Num",
+                placeholder: "Admission Num",
+              },
+              { id: "name4", label: "College", placeholder: "College" },
+            ].map((field) => (
+              <div key={field.id}>
+                <FormField
+                  id={field.id}
+                  name={field.id}
+                  label={field.label}
+                  placeholder={field.placeholder}
+                  type={field.type}
+                  errors={errors}
+                  touched={touched}
+                  setFieldValue={setFieldValue}
+                 
+                />
+              </div>
+            ))}
+          </div>
         </div>
       );
     case 3:
@@ -378,13 +390,40 @@ function RenderFormFields({
           <h3 className="text-2xl font-semibold pb-3 text-gray-600">
             Fee and Scholarship
           </h3>
-          <h1>test</h1>
+          <div className="grid gap-6 mb-6 md:grid-cols-2">
+            {[
+              { id: "name5", label: "cource", placeholder: " cource 1" },
+              {
+                id: "name6",
+                label: "cource 1",
+                placeholder: " cource 1",
+              },
+              {
+                id: "name7",
+                label: "Admission Num",
+                placeholder: "Admission Num",
+              },
+              { id: "name8", label: "College", placeholder: "College" },
+            ].map((field) => (
+              <div key={field.id}>
+                <FormField
+                  id={field.id}
+                  name={field.id}
+                  label={field.label}
+                  placeholder={field.placeholder}
+                  type={field.type}
+                  errors={errors}
+                  touched={touched}
+                  setFieldValue={setFieldValue}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       );
     default:
       return null;
   }
-  return;
 }
 
 export default RenderFormFields;

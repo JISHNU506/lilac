@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Comment from "./Coment";
+import post from "../assets/post.jpg"
 
 function Comments() {
   const [newCommentText, setNewCommentText] = useState("");
@@ -100,9 +101,9 @@ function Comments() {
               elit...
             </p>
             <img
-              src="https://www.campusfrance.org/sites/default/files/styles/mobile_visuel_principal_page/public/medias/images/2017-10/bourses%20et%20possibilit%C3%A9s%20de%20financement%20%28corps%20du%20texte%29_etudiants.jpg?itok=y8yzsOTe"
+              src={post}
               alt=""
-              className="mt-4 w-full h-[70vh] object-cover rounded"
+              className="mt-4 w-full h-[30h] md:h-[70vh] object-cover rounded"
             />
           </div>
           <div className="bg-gray-100 px-3 w-[145px]  py-1 rounded-lg text-[12px] text-gray-500">

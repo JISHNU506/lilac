@@ -7,7 +7,6 @@ import FormUser from './Components/FormUser';
 function App() {
   return (
 <>
-<CardsUser/>
 <FormUser/>
 <Comments/>
 </>

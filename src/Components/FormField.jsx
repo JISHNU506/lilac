@@ -1,8 +1,9 @@
 import React from "react";
-import {  Field, ErrorMessage } from "formik";
+import { Field, ErrorMessage } from "formik";
 
 function FormField({
   id,
+  isReq,
   name,
   label,
   placeholder,
@@ -18,7 +19,7 @@ function FormField({
         htmlFor={id}
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
       >
-        {label} <span className="text-red-500">*</span>
+        {label} {isReq ? <span className="text-red-500">*</span>:""}
       </label>
       {type === "file" ? (
         <input
